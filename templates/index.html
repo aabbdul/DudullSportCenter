@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <!-- <link rel="stylesheet" href="../static/styles.css" /> -->
+    <title>Dudull | Sports Center</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-brand me-auto">
+          <img
+            src="{{ url_for('static', filename='assets/dudul.png') }}"
+            alt="Logo"
+          />
+        </div>
+
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              <img
+                src="{{ url_for('static', filename='assets/dudul.png') }}"
+                alt="Logo"
+              />
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2 active" aria-current="page" href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#tentang">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#">Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#fasilitas">Facility</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#galeri">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#kategori">Category</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#testimoni">Testimony</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#kontak">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a href="{{ url_for('register') }}" class="login-button">Register</a>
+
+        <button
+          class="navbar-toggler pe-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <header class="section__container header__container">
+      <div class="header__image__container">
+        <div class="header__content">
+          <h1>Dudull Sports Center</h1>
+          <p>Reserve Badminton and Futsal courts at affordable prices.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container" id="tentang">
+      <div class="reward__container">
+        <h4>About Us</h4>
+        <p>
+          Dudull is a sports center that offers high quality badminton and
+          futsal facilities and international standard courts, comfortable
+          changing rooms, a canteen, and a large parking area. Besides providing
+          an optimal environment for training and matches, Dudull also organizes
+          various programs and events such as training classes and regular
+          tournaments. With a commitment to developing sporting talents and
+          interests in the community, Dudull is the first choice for sports
+          lovers who are looking for a complete and comfortable place to play
+          and develop their skills with friends and family.
+        </p>
+        <!-- <button class="reward__btn">Join Rewards</button> -->
+      </div>
+    </section>
+
+    <section class="section__container popular__container">
+      <h2 class="section__header" id="fasilitas">Facility</h2>
+      <div class="popular__grid">
+        <div class="popular__card">
+          <img
+            src="{{ url_for('static', filename='assets/hotel-1.jpg') }}"
+            alt="popular hotel"
+          />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>The Plaza Hotel</h4>
+              <h4>$499</h4>
+            </div>
+            <p>New York City, USA</p>
+          </div>
+        </div>
+        <div class="popular__card">
+          <img
+            src="{{ url_for('static', filename='assets/hotel-2.jpg') }}"
+            alt="popular hotel"
+          />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>Ritz Paris</h4>
+              <h4>$549</h4>
+            </div>
+            <p>Paris, France</p>
+          </div>
+        </div>
+        <div class="popular__card">
+          <img
+            src="{{ url_for('static', filename='assets/hotel-3.jpg') }}"
+            alt="popular hotel"
+          />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>The Peninsula</h4>
+              <h4>$599</h4>
+            </div>
+            <p>Hong Kong</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section__container popular__container">
+      <h2 class="section__header" id="galeri">Gallery</h2>
+      <div class="popular__grid">
+        <div class="popular__card">
+          <img
+            src="{{ url_for('static', filename='assets/hotel-4.jpg') }}"
+            alt="popular hotel"
+          />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>The Plaza Hotel</h4>
+              <h4>$499</h4>
+            </div>
+            <p>New York City, USA</p>
+          </div>
+        </div>
+        <div class="popular__card">
+          <img
+            src="{{ url_for('static', filename='assets/hotel-5.jpg') }}"
+            alt="popular hotel"
+          />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>Ritz Paris</h4>
+              <h4>$549</h4>
+            </div>
+            <p>Paris, France</p>
+          </div>
+        </div>
+        <div class="popular__card">
+          <img
+            src="{{ url_for('static', filename='assets/hotel-6.jpg') }}"
+            alt="popular hotel"
+          />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>The Peninsula</h4>
+              <h4>$599</h4>
+            </div>
+            <p>Hong Kong</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section__container popular__container">
+      <h2 class="section__header" id="kategori">Category</h2>
+      <div class="popular__category">
+        <div class="popular__image_container1">
+          <div class="popular__content">
+            <h2>Futsal</h2>
+          </div>
+        </div>
+        <div class="popular__image_container2">
+          <div class="popular__content">
+            <h2>Badminton</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="client">
+      <div class="section__container client__container">
+        <h2 class="section__header" id="testimoni">Testimony</h2>
+        <div class="client__grid">
+          <div class="client__card">
+            <img
+              src="{{ url_for('static', filename='assets/client-1.jpg') }}"
+              alt="client"
+            />
+            <p>
+              The booking process was seamless, and the confirmation was
+              instant. I highly recommend WDM&Co for hassle-free hotel bookings.
+            </p>
+          </div>
+          <div class="client__card">
+            <img
+              src="{{ url_for('static', filename='assets/client-2.jpg') }}"
+              alt="client"
+            />
+            <p>
+              The website provided detailed information about hotel, including
+              amenities, photos, which helped me make an informed decision.
+            </p>
+          </div>
+          <div class="client__card">
+            <img
+              src="{{ url_for('static', filename='assets/client-3.jpg') }}"
+              alt="client"
+            />
+            <p>
+              I was able to book a room within minutes, and the hotel exceeded
+              my expectations. I appreciate WDM&Co's efficiency and reliability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="kontak">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3>Dudull Sports Center</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam,
+            assumenda quisquam veniam nostrum delectus dicta Rerum, minima
+            necessitatibus!
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <p>About Us</p>
+          <p>Our Team</p>
+          <p>Blog</p>
+          <p>Book</p>
+          <p>Contact Us</p>
+        </div>
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <p>FAQs</p>
+          <p>Terms & Conditions</p>
+          <p>Privacy Policy</p>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <p>Social Media</p>
+          <p>Help Center</p>
+          <p>Partnerships</p>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2024 Dudull Sports Center. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          navLinks.forEach((nav) => nav.classList.remove("active"));
+
+          this.classList.add("active");
+        });
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
