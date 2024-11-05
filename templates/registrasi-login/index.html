@@ -20,11 +20,16 @@
   <body>
     <div class="container">
       <div class="signin-signup">
-        <form action="#" class="sign-in-form">
+        <form method="POST" action="{{ url_for('auth') }}" class="sign-in-form">
           <h2 class="title">Registration</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Full Name" required />
+            <input
+              type="text"
+              name="username"
+              placeholder="Full Name"
+              required
+            />
           </div>
           <div class="input-field">
             <i class="fas fa-phone"></i>
@@ -36,24 +41,34 @@
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" required />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
           </div>
-          <input type="submit" value="Sign Up" class="btn" />
+          <input type="submit" name="register" value="Sign Up" class="btn" />
           <p class="account-text">
             Already have an account? <a href="#" id="sign-up-btn2">Sign in</a>
           </p>
         </form>
-        <form action="#" class="sign-up-form">
+        <form method="POST" action="{{ url_for('auth') }}" class="sign-up-form">
           <h2 class="title">Sign in</h2>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" required />
+            <input type="email" name="username" placeholder="Email" required />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" required />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
           </div>
-          <input type="submit" value="Login" class="btn" />
+          <input type="submit" name="login" value="Login" class="btn" />
           <p class="account-text">
             Don't have an account? <a href="#" id="sign-in-btn2">Sign Up</a>
           </p>
