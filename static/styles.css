@@ -10,6 +10,31 @@
   --max-width: 1200px;
 }
 
+.alert {
+  position: fixed;
+  top: 0; /* Jarak dari atas */
+  left: 0; /* Jarak dari kanan */
+  background-color: #d4edda; /* Warna latar belakang (merah muda) */
+  color: #155724; /* Warna teks (gelap) */
+  border: 1px solid #c3e6cb; /* Border */
+  border-radius: 5px; /* Sudut melengkung */
+  padding: 15px; /* Padding di dalam alert */
+  width: 300px; /* Lebar alert */
+  z-index: 1050; /* Pastikan di atas konten lain */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+  display: flex; /* Gunakan flexbox untuk tata letak */
+  justify-content: space-between; /* Ruang antara konten dan tombol tutup */
+  align-items: center; /* Vertikal center */
+}
+
+.btn-close {
+  background: none; /* Tanpa background */
+  border: none; /* Tanpa border */
+  font-size: 15px; /* Ukuran font */
+  cursor: pointer; /* Tangan ketika hover */
+  color: #505050; /* Warna teks (gelap) */
+}
+
 * {
   margin: 0;
   padding: 0;

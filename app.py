@@ -22,32 +22,32 @@ def register():
 def auth():
     if 'register' in request.form:
         # Register logic
-        username = request.form['username']
+        email = request.form['email']
         password = request.form['password']
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
         
         # Check if user already exists
-        if mongo.db.users.find_one({'username': username}):
-            flash('Username already exists')
+        if mongo.db.users.find_one({'email': email}):
+            flash('User already exists', 'danger')
         else:
-            mongo.db.users.insert_one({'username': username, 'password': hashed_password})
-            flash('Registration successful! You can now log in.')
-        return redirect(url_for('home'))
+            mongo.db.users.insert_one({'email': email, 'password': hashed_password})
+            flash('Registration successful! You can now log in.', 'success')
+        return redirect(url_for('register'))
     
     elif 'login' in request.form:
         # Login logic
-        username = request.form['username']
+        email = request.form['email']
         password = request.form['password']
-        user = mongo.db.users.find_one({'username': username})
+        user = mongo.db.users.find_one({'email': email})
 
         if user and bcrypt.check_password_hash(user['password'], password):
-            session['username'] = username
+            session['email'] = email
             flash('Login successful!')
             return redirect(url_for('home'))
         else:
-            flash('Invalid username or password')
+            flash('Invalid email or password', 'danger')
     
-    return redirect(url_for('home'))
+    return redirect(url_for('register'))
 
 
 if __name__ == '__main__':
