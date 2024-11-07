@@ -14,7 +14,7 @@ bcrypt = Bcrypt(app)
 def home():
     return render_template('index.html')
 
-@app.route('/registrasi-login')
+@app.route('/registrasi')
 def register():
     return render_template('registrasi-login/index.html')
 
@@ -24,13 +24,15 @@ def auth():
         # Register logic
         email = request.form['email']
         password = request.form['password']
+        fullname = request.form['fullname']
+        phone = request.form['phone']
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
         
         # Check if user already exists
         if mongo.db.users.find_one({'email': email}):
             flash('User already exists', 'danger')
         else:
-            mongo.db.users.insert_one({'email': email, 'password': hashed_password})
+            mongo.db.users.insert_one({'fullname':fullname,'phone':phone,'email': email, 'password': hashed_password})
             flash('Registration successful! You can now log in.', 'success')
         return redirect(url_for('register'))
     
@@ -49,6 +51,11 @@ def auth():
     
     return redirect(url_for('register'))
 
+@app.route('/logout')
+def userLogout():
+    session.pop('email', None)
+    flash('Anda telah logout.', 'success')
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True)

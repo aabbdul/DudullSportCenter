@@ -27,7 +27,7 @@
   align-items: center; /* Vertikal center */
 }
 
-.btn-close {
+.tombol-close {
   background: none; /* Tanpa background */
   border: none; /* Tanpa border */
   font-size: 15px; /* Ukuran font */
@@ -67,6 +67,22 @@
 }
 
 .login-button:active {
+  scale: 0.95;
+}
+
+.logout-button {
+  background-color: rgb(194, 74, 74);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.logout-button:hover {
+  background-color: rgba(194, 74, 74, 0.9);
+}
+
+.logout-button:active {
   scale: 0.95;
 }
 
