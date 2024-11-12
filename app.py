@@ -3,7 +3,7 @@ from flask_pymongo import PyMongo
 from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
-app.secret_key = b'\xad\x07\x93Y+\xcc\x9aX\xcf\xf8?\xda\xf9^\xa4\xbd\n\x06\xbaE\x0bz\x84~'  # Change this to a random secret key
+app.secret_key = b'\xad\x07\x93Y+\xcc\x9aX\xcf\xf8?\xda\xf9^\xa4\xbd\n\x06\xbaE\x0bz\x84~'
 
 # MongoDB configuration
 app.config["MONGO_URI"] = "mongodb://localhost:27017/user-management"
