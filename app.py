@@ -21,14 +21,13 @@ def register():
 @app.route('/auth', methods=['GET','POST'])
 def auth():
     if 'register' in request.form:
-        # Register logic
+
         email = request.form['email']
         password = request.form['password']
         fullname = request.form['fullname']
         phone = request.form['phone']
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
         
-        # Check if user already exists
         if mongo.db.users.find_one({'email': email}):
             flash('User already exists', 'danger')
         else:
@@ -37,7 +36,7 @@ def auth():
         return redirect(url_for('register'))
     
     elif 'login' in request.form:
-        # Login logic
+
         email = request.form['email']
         password = request.form['password']
         user = mongo.db.users.find_one({'email': email})
