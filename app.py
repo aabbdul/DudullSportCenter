@@ -54,7 +54,7 @@ def auth():
 @app.route('/logout')
 def userLogout():
     session.pop('email', None)
-    flash('Anda telah logout.', 'success')
+    flash('You have been logged out.', 'success')
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
