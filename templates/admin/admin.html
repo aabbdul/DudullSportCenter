@@ -3,9 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin | Dudull</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='admin.css') }}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='assets/dudul.ico') }}"
+    />
+    <title>Admin | Dudul</title>
   </head>
   <body>
-    <h1>Admin</h1>
+    <div class="l-form">
+      <div class="shape1"></div>
+      <div class="shape2"></div>
+
+      <div class="form">
+        <img
+          src="{{ url_for('static', filename='assets/adminn.jpg') }}"
+          alt=""
+          class="form__img"
+        />
+
+        <form action="" class="form__content">
+          <h1 class="form__title">Dudull's Admin</h1>
+
+          <div class="form__div form__div-one">
+            <div class="form__icon">
+              <i class="bx bx-user-circle"></i>
+            </div>
+
+            <div class="form__div-input">
+              <label for="" class="form__label">Username</label>
+              <input type="text" class="form__input" />
+            </div>
+          </div>
+
+          <div class="form__div">
+            <div class="form__icon">
+              <i class="bx bx-lock"></i>
+            </div>
+
+            <div class="form__div-input">
+              <label for="" class="form__label">Password</label>
+              <input type="password" class="form__input" />
+            </div>
+          </div>
+
+          <input type="submit" class="form__button" value="Login" />
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== MAIN JS ===== -->
+    <script>
+      /*===== FOCUS =====*/
+      const inputs = document.querySelectorAll(".form__input");
+
+      /*=== Add focus ===*/
+      function addfocus() {
+        let parent = this.parentNode.parentNode;
+        parent.classList.add("focus");
+      }
+
+      /*=== Remove focus ===*/
+      function remfocus() {
+        let parent = this.parentNode.parentNode;
+        if (this.value == "") {
+          parent.classList.remove("focus");
+        }
+      }
+
+      /*=== To call function===*/
+      inputs.forEach((input) => {
+        input.addEventListener("focus", addfocus);
+        input.addEventListener("blur", remfocus);
+      });
+    </script>
   </body>
 </html>
