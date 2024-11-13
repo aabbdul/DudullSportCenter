@@ -366,14 +366,14 @@ body {
   border: none;
   font-size: 1rem;
   color: var(--white);
-  background-color: var(--primary-color);
+  background-color: rgb(44, 82, 85);
   border-radius: 1rem;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .reward__btn:hover {
-  background-color: var(--primary-color-dark);
+  background-color: rgba(44, 82, 85, 0.9);
 }
 
 .footer {
