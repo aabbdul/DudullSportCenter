@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request, session, flash
 from flask_pymongo import PyMongo
-from flask_bcrypt import Bcrypt
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 app = Flask(__name__)
 app.secret_key = b'\xad\x07\x93Y+\xcc\x9aX\xcf\xf8?\xda\xf9^\xa4\xbd\n\x06\xbaE\x0bz\x84~'
@@ -8,7 +9,6 @@ app.secret_key = b'\xad\x07\x93Y+\xcc\x9aX\xcf\xf8?\xda\xf9^\xa4\xbd\n\x06\xbaE\
 # MongoDB configuration
 app.config["MONGO_URI"] = "mongodb://localhost:27017/user-management"
 mongo = PyMongo(app)
-bcrypt = Bcrypt(app)
 
 @app.route('/')
 def home():
@@ -22,11 +22,11 @@ def register():
 def auth():
     if 'register' in request.form:
 
-        email = request.form['email']
-        password = request.form['password']
         fullname = request.form['fullname']
         phone = request.form['phone']
-        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        email = request.form['email']
+        password = request.form['password']
+        hashed_password = generate_password_hash(password)
 
         newUser = {
             'fullname':fullname,
@@ -48,7 +48,7 @@ def auth():
         password = request.form['password']
         user = mongo.db.users.find_one({'email': email})
 
-        if user and bcrypt.check_password_hash(user['password'], password):
+        if user and check_password_hash(user['password'], password):
             session['email'] = email
             flash('Login successful!')
             return redirect(url_for('home'))
