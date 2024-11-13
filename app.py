@@ -27,11 +27,18 @@ def auth():
         fullname = request.form['fullname']
         phone = request.form['phone']
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+
+        newUser = {
+            'fullname':fullname,
+            'phone':phone,
+            'email': email, 
+            'password': hashed_password
+            }
         
         if mongo.db.users.find_one({'email': email}):
             flash('User already exists', 'danger')
         else:
-            mongo.db.users.insert_one({'fullname':fullname,'phone':phone,'email': email, 'password': hashed_password})
+            mongo.db.users.insert_one(newUser)
             flash('Registration successful! You can now log in.', 'success')
         return redirect(url_for('register'))
     
