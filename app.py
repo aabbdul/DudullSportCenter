@@ -66,8 +66,8 @@ def authAdmin():
 
         if user and check_password_hash(user['password'], password):
             session['username'] = username
-            flash('Login successful!')
-            return redirect(url_for('home'))
+            flash("You're now admin", 'success')
+            return redirect(url_for('admin'))
         else:
             flash('Invalid username or password', 'danger')
     
@@ -90,6 +90,12 @@ def userLogout():
     session.pop('email', None)
     flash('You have been logged out.', 'success')
     return redirect(url_for('home'))
+
+@app.route('/adminlogout')
+def adminLogout():
+    session.pop('username', None)
+    flash("You're no longer admin.", 'success')
+    return redirect(url_for('admin'))
 
 if __name__ == '__main__':
     app.run(debug=True)

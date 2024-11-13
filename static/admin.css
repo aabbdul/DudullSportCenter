@@ -43,7 +43,7 @@ img {
   border: 1px solid #f5c6cb; /* Border */
   border-radius: 5px; /* Sudut melengkung */
   padding: 15px; /* Padding di dalam alert */
-  width: 300px; /* Lebar alert */
+  width: 320px; /* Lebar alert */
   z-index: 1050; /* Pastikan di atas konten lain */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
   display: flex; /* Gunakan flexbox untuk tata letak */
