@@ -272,7 +272,46 @@ body {
   border-radius: 1rem;
 }
 
+.popular__image_container_book1 {
+  position: relative;
+  min-height: 400px;
+  background-image: linear-gradient(
+      to right,
+      rgb(0, 0, 0, 0.7),
+      rgb(0, 0, 0, 0.7)
+    ),
+    url("./assets/bolafutsal.jpg");
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+}
+
+.popular__image_container_book2 {
+  position: relative;
+  min-height: 400px;
+  background-image: linear-gradient(
+      to right,
+      rgb(0, 0, 0, 0.6),
+      rgb(0, 0, 0, 0.6)
+    ),
+    url("./assets/kok.jpg");
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+}
+
 .popular__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
 }
 
@@ -369,11 +408,11 @@ body {
   background-color: rgb(44, 82, 85);
   border-radius: 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .reward__btn:hover {
-  background-color: rgba(44, 82, 85, 0.9);
+  background-color: rgb(52, 96, 99);
 }
 
 .footer {

@@ -142,10 +142,25 @@
         <!-- <button class="reward__btn">Join Rewards</button> -->
       </div>
     </section>
-    <section class="section__container" id="booking">
-      <div class="reward__container">
-        <h4>Booking</h4>
-        <button class="reward__btn">Book</button>
+    <section class="section__container popular__container">
+      <h2 class="section__header" id="booking">Booking</h2>
+      <div class="popular__category">
+        <div class="popular__image_container_book1">
+          <div class="popular__content">
+            <h2>Futsal</h2>
+            <a href="{{ url_for('bookFutsal') }}"
+              ><button class="reward__btn">Book</button></a
+            >
+          </div>
+        </div>
+        <div class="popular__image_container_book2">
+          <div class="popular__content">
+            <h2>Badminton</h2>
+            <a href="{{ url_for('bookBadminton') }}">
+              <button class="reward__btn">Book</button></a
+            >
+          </div>
+        </div>
       </div>
     </section>
     <section class="section__container popular__container">

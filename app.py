@@ -56,6 +56,14 @@ def auth():
     
     return redirect(url_for('register'))
 
+@app.route('/bookingFutsal')
+def bookFutsal():
+    return render_template('booking/futsal.html')
+
+@app.route('/bookingBadminton')
+def bookBadminton():
+    return render_template('booking/badminton.html')
+
 @app.route('/logout')
 def userLogout():
     session.pop('email', None)
