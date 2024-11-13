@@ -18,6 +18,20 @@
     <title>Admin | Dudul</title>
   </head>
   <body>
+    {% with messages = get_flashed_messages(with_categories=True) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }}" role="alert">
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      >
+        &#10006;
+      </button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
     <div class="l-form">
       <div class="shape1"></div>
       <div class="shape2"></div>
@@ -29,7 +43,11 @@
           class="form__img"
         />
 
-        <form action="" class="form__content">
+        <form
+          method="POST"
+          action="{{ url_for('authAdmin') }}"
+          class="form__content"
+        >
           <h1 class="form__title">Dudull's Admin</h1>
 
           <div class="form__div form__div-one">
@@ -39,7 +57,7 @@
 
             <div class="form__div-input">
               <label for="" class="form__label">Username</label>
-              <input type="text" class="form__input" />
+              <input type="text" name="username" class="form__input" />
             </div>
           </div>
 
@@ -50,11 +68,16 @@
 
             <div class="form__div-input">
               <label for="" class="form__label">Password</label>
-              <input type="password" class="form__input" />
+              <input type="password" name="password" class="form__input" />
             </div>
           </div>
 
-          <input type="submit" class="form__button" value="Login" />
+          <input
+            type="submit"
+            name="login"
+            class="form__button"
+            value="Login"
+          />
         </form>
       </div>
     </div>
@@ -84,5 +107,10 @@
         input.addEventListener("blur", remfocus);
       });
     </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

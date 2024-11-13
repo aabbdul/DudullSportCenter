@@ -56,6 +56,23 @@ def auth():
     
     return redirect(url_for('register'))
 
+@app.route('/authAdmin', methods=['GET','POST'])
+def authAdmin():
+    if 'login' in request.form:
+
+        username = request.form['username']
+        password = request.form['password']
+        user = mongo.db.admin.find_one({'username': username})
+
+        if user and check_password_hash(user['password'], password):
+            session['username'] = username
+            flash('Login successful!')
+            return redirect(url_for('home'))
+        else:
+            flash('Invalid username or password', 'danger')
+    
+    return redirect(url_for('admin'))
+
 @app.route('/bookingFutsal')
 def bookFutsal():
     return render_template('booking/futsal.html')
