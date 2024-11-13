@@ -64,6 +64,10 @@ def bookFutsal():
 def bookBadminton():
     return render_template('booking/badminton.html')
 
+@app.route('/admin')
+def admin():
+    return render_template('admin/admin.html')
+
 @app.route('/logout')
 def userLogout():
     session.pop('email', None)

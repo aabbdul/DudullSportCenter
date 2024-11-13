@@ -42,10 +42,11 @@
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
         <div class="navbar-brand me-auto">
-          <img
-            src="{{ url_for('static', filename='assets/dudul.png') }}"
-            alt="Logo"
-          />
+          <a href="{{ url_for('admin') }}">
+            <img
+              src="{{ url_for('static', filename='assets/dudul.png') }}"
+              alt="Logo"
+          /></a>
         </div>
         <div
           class="offcanvas offcanvas-end"
