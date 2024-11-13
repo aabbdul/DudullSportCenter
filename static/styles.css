@@ -295,10 +295,10 @@ body {
   min-height: 400px;
   background-image: linear-gradient(
       to right,
-      rgb(0, 0, 0, 0.6),
-      rgb(0, 0, 0, 0.6)
+      rgb(0, 0, 0, 0.7),
+      rgb(0, 0, 0, 0.7)
     ),
-    url("./assets/kok.jpg");
+    url("./assets/raket.jpg");
   background-position: center center;
   background-size: cover;
   display: flex;
@@ -406,7 +406,7 @@ body {
   font-size: 1rem;
   color: var(--white);
   background-color: rgb(44, 82, 85);
-  border-radius: 1rem;
+  border-radius: 50px;
   cursor: pointer;
   transition: 0.2s;
 }
