@@ -309,10 +309,21 @@ body {
 }
 
 .popular__content {
+  padding: 1rem;
+}
+
+.booking__content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+}
+
+.booking__content h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 4rem;
+  color: var(--white);
+  text-shadow: 2px 2px rgb(38, 61, 63);
 }
 
 .popular__content h2 {

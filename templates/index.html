@@ -42,11 +42,10 @@
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
         <div class="navbar-brand me-auto">
-          <a href="{{ url_for('admin') }}">
-            <img
-              src="{{ url_for('static', filename='assets/dudul.png') }}"
-              alt="Logo"
-          /></a>
+          <img
+            src="{{ url_for('static', filename='assets/dudul.png') }}"
+            alt="Logo"
+          />
         </div>
         <div
           class="offcanvas offcanvas-end"
@@ -147,7 +146,7 @@
       <h2 class="section__header" id="booking">Booking</h2>
       <div class="popular__category">
         <div class="popular__image_container_book1">
-          <div class="popular__content">
+          <div class="booking__content">
             <h2>Futsal</h2>
             <a href="{{ url_for('bookFutsal') }}"
               ><button class="reward__btn">Book</button></a
@@ -155,7 +154,7 @@
           </div>
         </div>
         <div class="popular__image_container_book2">
-          <div class="popular__content">
+          <div class="booking__content">
             <h2>Badminton</h2>
             <a href="{{ url_for('bookBadminton') }}">
               <button class="reward__btn">Book</button></a
