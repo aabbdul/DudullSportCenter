@@ -15,7 +15,7 @@
       rel="icon"
       href="{{ url_for('static', filename='assets/dudul.ico') }}"
     />
-    <title>Dashboard | Admin</title>
+    <title>Dashboard | Users</title>
   </head>
   <body>
     {% if session.username %}
@@ -68,12 +68,15 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link mx-lg-2 active" aria-current="page" href="#"
+                <a
+                  class="nav-link mx-lg-2"
+                  aria-current="page"
+                  href="{{ url_for('admin') }}"
                   >Admin</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="{{ url_for('users') }}"
+                <a class="nav-link mx-lg-2 active" href="{{ url_for('users') }}"
                   >Users</a
                 >
               </li>
@@ -103,10 +106,7 @@
       <section class="container">
         <div class="header">
           <div class="header-left">
-            <h2>Admin Data</h2>
-          </div>
-          <div class="header-right">
-            <a href="/tambahDataAdmin" class="button">Add Admin</a>
+            <h2>User's data</h2>
           </div>
         </div>
 
@@ -118,7 +118,17 @@
                   <tr>
                     <th>
                       <button class="header-button">
-                        <span>Username</span>
+                        <span>Fullname</span>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="header-button">
+                        <span>Email</span>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="header-button">
+                        <span>Phone</span>
                       </button>
                     </th>
                     <th>
@@ -127,14 +137,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for data in admin %}
+                  {% for data in user %}
                   <tr>
                     <td>
                       <div>
-                        <h6>{{ data.username }}</h6>
+                        <h6>{{ data.fullname }}</h6>
                       </div>
                     </td>
-
+                    <td>
+                      <div>
+                        <h6>{{ data.email }}</h6>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <h6>{{ data.phone }}</h6>
+                      </div>
+                    </td>
                     <td>
                       <button class="hapus-data-btn" data-id="{{data._id}}">
                         Delete
@@ -149,7 +168,6 @@
         </div>
       </section>
     </div>
-    <!-- Modal untuk konfirmasi hapus -->
     <div
       class="modal fade"
       id="deleteModal"
@@ -171,7 +189,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            Are you sure you want to delete this admin data?
+            Are you sure you want to delete this user data?
           </div>
           <div class="modal-footer">
             <button
@@ -188,7 +206,6 @@
         </div>
       </div>
     </div>
-
     <style>
       .container {
         width: 100%;
@@ -268,7 +285,7 @@
 
       .table td {
         background-color: #fff;
-        width: 100%;
+        width: 10%;
       }
 
       .header-button {
@@ -284,14 +301,13 @@
         cursor: pointer;
         border: none;
         padding: 5px;
-        width: 100%;
+        width: 60px;
         border-radius: 50px;
       }
 
       .hapus-data-btn:hover {
         color: #9b2c2c;
       }
-      /* Styling untuk modal konfirmasi hapus */
       .modal .modal-header {
         background-color: #f8d7da;
         border-bottom: 1px solid #f5c6cb;
@@ -345,7 +361,7 @@
         confirmDeleteBtn.addEventListener("click", function () {
           if (adminIdToDelete) {
             // Redirect ke route Flask untuk menghapus data admin
-            window.location.href = `/hapusDataAdmin/${adminIdToDelete}`;
+            window.location.href = `/hapusDataUser/${adminIdToDelete}`;
           }
         });
       });

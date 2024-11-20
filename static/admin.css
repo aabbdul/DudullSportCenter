@@ -68,7 +68,7 @@ img {
   align-items: center; /* Vertikal center */
 }
 
-.btn-close {
+.tombol-close {
   background: none; /* Tanpa background */
   border: none; /* Tanpa border */
   font-size: 15px; /* Ukuran font */

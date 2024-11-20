@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+.navbar {
+  background-color: #fff;
+  height: 80px;
+  margin: 20px;
+  border-radius: 16px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+  width: 3rem;
+  /* background-color: red; */
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.nav-link {
+  color: #666777;
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: rgb(44, 82, 85);
+}
+
+.offcanvas-title {
+  width: 5rem;
+}
+
+.custom-alert {
+  position: fixed; /* Tetap di tempat tertentu */
+  top: 0px; /* Jarak dari navbar */
+  right: 0px; /* Jarak dari tepi kanan */
+  z-index: 1050; /* Pastikan berada di atas elemen lainnya */
+  max-width: 300px; /* Batas lebar */
+  border-radius: 8px; /* Membuat sudut membulat */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  animation: slide-in 0.3s ease-out; /* Animasi muncul */
+}
+
+.logout-button {
+  background-color: rgb(194, 74, 74);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.logout-button:hover {
+  background-color: rgba(194, 74, 74, 0.9);
+}
+
+.logout-button:active {
+  scale: 0.95;
+}
+
+@media (min-width: 991px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: rgb(44, 82, 85);
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
+  }
+
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 80%;
+    visibility: visible;
+  }
+}
