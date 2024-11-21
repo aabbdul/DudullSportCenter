@@ -3,9 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='assets/dudul.ico') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='futsal.css') }}"
+    />
     <title>Badminton | Booking</title>
   </head>
   <body>
-    <h1>Badminton</h1>
+    <div class="Fill">
+      <div class="card-kebawah">
+        <div class="card-container">
+          <div class="image-content">
+            <img src="/static/assets/badmintonkategori.jpg" alt="" />
+          </div>
+          <div class="card-title">
+            <h3>Court 1</h3>
+          </div>
+          <div class="btn">
+            <a href="#">Book</a>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="image-content">
+            <img src="/static/assets/badmintonkategori.jpg" alt="" />
+          </div>
+          <div class="card-title">
+            <h3>Court 2</h3>
+          </div>
+          <div class="btn">
+            <a href="#">Book</a>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="image-content">
+            <img src="/static/assets/badmintonkategori.jpg" alt="" />
+          </div>
+          <div class="card-title">
+            <h3>Court 3</h3>
+          </div>
+          <div class="btn">
+            <a href="#">Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
