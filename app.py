@@ -14,6 +14,7 @@ client = MongoClient('mongodb://localhost:27017/')
 db = client['user-management']
 users_collection = db['users']
 admins_collection = db['admin']
+bookings_collection = db['bookings']
 
 @app.route('/')
 def home():
@@ -129,6 +130,11 @@ def hapus_data_admin(_id):
 def users():
     user = list(users_collection.find({}))
     return render_template('admin/user.html', user=user)
+
+@app.route('/dashboardBooking',methods=['GET', 'POST'])
+def bookings():
+    bookings = list(bookings_collection.find({}))
+    return render_template('admin/booking.html', bookings=bookings)
 
 @app.route('/hapusDataUser/<string:_id>', methods=["GET", "POST"])
 def hapus_data_user(_id):
