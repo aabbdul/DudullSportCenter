@@ -53,6 +53,9 @@ def auth():
         password = request.form['password']
         user = users_collection.find_one({'email': email})
 
+        if 'email' in session:
+            return redirect(url_for('home'))
+
         if user and check_password_hash(user['password'], password):
             session['email'] = email
             flash('Login successful!')

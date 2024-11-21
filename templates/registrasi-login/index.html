@@ -35,7 +35,12 @@
         &#10006;
       </button>
     </div>
-    {% endfor %} {% endif %} {% endwith %}
+    {% endfor %} {% endif %} {% endwith %} {% if session.email %}
+    <script>
+      window.location.href = "{{ url_for('home') }}";
+    </script>
+    {% endif %}
+
     <div class="container">
       <div class="signin-signup">
         <form method="POST" action="{{ url_for('auth') }}" class="sign-in-form">
