@@ -124,12 +124,32 @@
                     </th>
                     <th>
                       <button class="header-button">
-                        <span>Email</span>
+                        <span>Phone</span>
                       </button>
                     </th>
                     <th>
                       <button class="header-button">
-                        <span>Phone</span>
+                        <span>Court type</span>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="header-button">
+                        <span>Court</span>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="header-button">
+                        <span>Time</span>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="header-button">
+                        <span>Duration</span>
+                      </button>
+                    </th>
+                    <th>
+                      <button class="header-button">
+                        <span>Price</span>
                       </button>
                     </th>
                     <th>
@@ -147,12 +167,32 @@
                     </td>
                     <td>
                       <div>
-                        <h6>{{ data.email }}</h6>
+                        <h6>{{ data.phone }}</h6>
                       </div>
                     </td>
                     <td>
                       <div>
-                        <h6>{{ data.phone }}</h6>
+                        <h6>{{ data.jenisLapangan }}</h6>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <h6>{{ data.lapangan }}</h6>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <h6>{{ data.jamwaktu }}</h6>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <h6>{{ data.durasi }} hours</h6>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <h6>Rp{{ data.harga }}</h6>
                       </div>
                     </td>
                     <td>
@@ -275,7 +315,7 @@
       .table th,
       .table td {
         padding: 1rem;
-        text-align: left;
+        text-align: center;
         font-size: 0.875rem;
         color: #4a5568;
       }

@@ -348,6 +348,12 @@ body {
   color: var(--text-dark);
 }
 
+.popular__card__header h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
 .popular__content p {
   color: var(--text-light);
 }
